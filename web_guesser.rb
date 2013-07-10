@@ -13,7 +13,7 @@ get "/" do
 	 elsif secret_number.to_i < params["guess"].to_i
 	 	guess="TOO high!"
 	 else secret_number.to_i == params["guess"].to_i
-	 	guess="You got it right!"
+	 	guess="The secret number is: #{secret_number} You got it right!"
 	end
 	erb :index, :locals => {:number => secret_number, :guess => guess}
 end
